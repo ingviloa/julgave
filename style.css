@@ -1,179 +1,111 @@
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500;600&display=swap");
-
-/*=============== VARIABLES CSS ===============*/
-:root {
-  --header-height: 3.5rem;
-  --animate-snow-1: animate-snow-1 5s infinite ease-in-out;
-  --animate-snow-2: animate-snow-2 5s infinite ease-in-out;
-
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(210, 80%, 54%);
-  --first-color-alt: hsl(210, 80%, 50%);
-  --title-color: hsl(210, 24%, 90%);
-  --text-color: hsl(210, 16%, 70%);
-  --white-color: #fff;
-  --body-color: hsl(210, 32%, 4%);
-
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: "Poppins", sans-serif;
-  --second-font: "Dancing Script", cursive;
-  --biggest-font-size: 2.5rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
-
-  /*========== Font weight ==========*/
-  --font-medium: 500;
-  --font-semi-bold: 600;
-  --font-bold: 700;
-  
-  /*========== z index ==========*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
+/* Reset and basics */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #1a1a2e, #16213e);
+    color: #fff;
+    text-align: center;
 }
 
-/* Responsive typography */
-@media screen and (min-width: 1024px) {
-  :root {
-    --biggest-font-size: 5rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
-  }
+h1, h2 {
+    color: #ff414d;
 }
 
-/*=============== BASE ===============*/
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+p {
+    color: #d1d1e0;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Header */
+.header {
+    background-color: #2c2c54;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Welcome Section */
+.welcome {
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Decorations Section */
+.decorations {
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.ornaments {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.ornament {
+    font-size: 2rem;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.ornament:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background: #111;
+    margin-top: 30px;
+    font-size: 0.8rem;
+}
+
+/* Add Snowfall Animation */
 body {
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  background-color: var(--body-color);
-  color: var(--text-color);
+    overflow-x: hidden;
 }
 
-h1, h2, h3 {
-  color: var(--title-color);
-  font-weight: var(--font-medium);
+@keyframes snow {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
 }
 
-ul {
-  list-style: none;
+.snowflake {
+    position: fixed;
+    top: -50px;
+    color: white;
+    font-size: 1rem;
+    animation: snow 10s linear infinite;
+    z-index: 999;
 }
 
-a {
-  text-decoration: none;
+/* Random snowflake positions and sizes */
+.snowflake:nth-child(1) {
+    left: 10%;
+    font-size: 1.2rem;
+    animation-duration: 8s;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.snowflake:nth-child(2) {
+    left: 50%;
+    font-size: 1.5rem;
+    animation-duration: 10s;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-  max-width: 1024px;
-  margin-inline: 1.5rem;
+.snowflake:nth-child(3) {
+    left: 80%;
+    font-size: 0.9rem;
+    animation-duration: 12s;
 }
-
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.section {
-  padding-block: 5rem 1rem;
-}
-.section__title {
-  font-size: var(--h1-font-size);
-  font-family: var(--second-font);
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.main {
-  overflow: hidden; /* For animations */
-}
-
-/* Snow animation */
-@keyframes animate-snow-1 {
-  0%, 100% {
-    transform: scale(.5);
-  }
-  50% {
-    transform: scale(1);
-  }
-}
-@keyframes animate-snow-2 {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(.5);
-  }
-}
-
-/*=============== HEADER & NAV ===============*/
-
-
-/* Show menu */
-
-
-/* Change background header */
-
-
-/* Active link */
-
-
-/*=============== HOME ===============*/
-
-
-/*=============== ABOUT ===============*/
-
-
-/*=============== BUTTON ===============*/
-
-
-/*=============== SEND ===============*/
-
-
-/*=============== CELEBRATE ===============*/
-
-
-/*=============== FOOTER ===============*/
-
-
-/*=============== SCROLL BAR ===============*/
-
-
-/*=============== SCROLL UP ===============*/
-
-
-/* Show Scroll Up */
-
-
-/*=============== BREAKPOINTS ===============*/
-/* For medium devices */
-
-
-/* For large devices */
-
-
-/* For 2K+ resolutions */
