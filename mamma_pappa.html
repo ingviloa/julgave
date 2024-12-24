@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mamma & Pappa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1 class="page-title">Mamma & Pappa</h1>
+            <img src="mor_far.JPG" alt="Mamma og Pappa" class="content-image">
+            <p class="content-text">
+                Hei Mamma og Pappa! Håper dere har en super jul. Liten juletvist i år. For å få gaven må dere svare på noen enkle spørsmål.
+                Skriv inn tallene som står på arket får å komme videre.
+            </p>
+
+            <!-- Kodeboks og knapp -->
+            <div class="code-box">
+                <input type="text" id="digit1" maxlength="1" class="code-input" >
+                <input type="text" id="digit2" maxlength="1" class="code-input" >
+                <input type="text" id="digit3" maxlength="1" class="code-input" >
+                <button class="code-button" onclick="checkCode()">Videre</button>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function checkCode() {
+            // Hent verdiene fra input-feltene
+            const digit1 = document.getElementById('digit1').value;
+            const digit2 = document.getElementById('digit2').value;
+            const digit3 = document.getElementById('digit3').value;
+    
+            // Sjekk om koden er korrekt
+            if (digit1 === '1' && digit2 === '2' && digit3 === '3') {
+                // Naviger til neste side
+                window.location.href = 'quiz_mamma_pappa.html';
+            } else {
+                alert('Feil kode! Prøv igjen.');
+            }
+        }
+    </script>
+</body>
+</html>         

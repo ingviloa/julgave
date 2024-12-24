@@ -5,10 +5,180 @@
 }
 
 header{
-    background-color: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(bilde.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(jul.jpg);
     height: 100vh;
     background-size: cover;
     background-position: center;
     min-height: 100px;
-
 }
+
+ul{
+    float: right;
+    list-style-type: none;
+    margin-top: 30px;
+    min-height: 400px;
+    margin-right: 5px;
+    font-family: 17px;
+}
+
+ul li{
+    display: inline-block;
+}
+
+ul li a{
+   text-decoration: none;
+   color: #fff;
+   padding: 5px 20px;
+   border: 1px soild transparent;
+   transition: 0.5 ease; 
+}
+
+ul li a:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+ul li.active a{
+    background-color: #fff;
+    color: #000
+}
+
+.main{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.title{
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.title h1{
+    color:#fff;
+    font-size: 70px;
+}
+
+.button{
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.btn{
+    border: 1px solid #fff;
+    padding: 5px 20px;
+    color: #fff;
+    transition: 0.5 ease;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.btn:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+/* Stil for tittelen */
+.page-title {
+    font-size: 50px; /* Gjør tittelen tydelig */
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px; /* Avstand under tittelen */
+    margin-left: 200px;
+}
+
+/* Stil for bildet */
+.content-image {
+    max-width: 20%; /* Tilpass bildet til skjermstørrelsen */
+    height: auto; /* Behold bildeforhold */
+    margin-bottom: 20px; /* Avstand under bildet */
+    border-radius: 10px; /* Myke hjørner */
+    margin-left: 575px;
+}
+
+/* Stil for teksten */
+.content-text {
+    font-size: 18px;
+    color: #fff;
+    text-align: center; /* Sentrer teksten */
+    max-width: 40%; /* Begrens bredden */
+    line-height: 1.5; /* God lesbarhet */
+    margin-left: 400px;
+}
+
+/* Stil for kodeboks */
+.code-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Stil for input-feltene */
+.code-input {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Stil for knappen */
+.code-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.code-button:hover {
+    background-color: #f5c6cb;
+}
+
+/* Container for bildene */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Mellomrom mellom bildene */
+    margin-top: 20px;
+}
+
+/* Hver bildeboks */
+.image-item {
+    text-align: center;
+    flex: 1; /* Sørger for at bildene får lik størrelse */
+}
+
+/* Bildestil */
+.quiz-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Stil for spørsmål */
+.image-question {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Stil for tekst-input */
+.text-input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz med Bilder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <ul>
+                <li><a href="index.html" class="home-btn">Hjem</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1 class="page-title">Hvilket årstall?</h1>
+
+            <!-- Bilder og spørsmål -->
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="topptur2015.JPG" alt="Bilde 1" class="quiz-image">
+                    <p class="image-question">Hvilket år ble dette bildet tatt?</p>
+                    <input type="text" id="answer1" class="text-input" placeholder="Skriv svar her">
+                </div>
+                <div class="image-item">
+                    <img src="sommer2007.jpg" alt="Bilde 2" class="quiz-image">
+                    <p class="image-question">Hvilket år ble dette bildet tatt?</p>
+                    <input type="text" id="answer2" class="text-input" placeholder="Skriv svar her">
+                </div>
+                <div class="image-item">
+                    <img src="kamel2009.jpg" alt="Bilde 3" class="quiz-image">
+                    <p class="image-question">Hvilket år ble dette bildet tatt?</p>
+                    <input type="text" id="answer3" class="text-input" placeholder="Skriv svar her">
+                </div>
+            </div>
+
+            <!-- Knapp for å sende inn svar -->
+            <button class="code-button" onclick="checkAnswers()">Videre</button>
+        </div>
+    </header>
+
+    <!-- JavaScript-kode -->
+    <script>
+        function checkAnswers() {
+            // Hent verdiene fra input-feltene
+            const answer1 = document.getElementById('answer1').value.toLowerCase();
+            const answer2 = document.getElementById('answer2').value.toLowerCase();
+            const answer3 = document.getElementById('answer3').value.toLowerCase();
+
+            // Riktige svar
+            const correct1 = "2015";  // Bytt ut med riktig svar
+            const correct2 = "2007";   // Bytt ut med riktig svar
+            const correct3 = "2009";   // Bytt ut med riktig svar
+
+            // Sjekk svarene
+            if (answer1 === correct1 && answer2 === correct2 && answer3 === correct3) {
+                window.location.href = 'gratulerer.html'; // Naviger til neste side
+            } else {
+                alert('Feil svar! Prøv igjen.');
+            }
+        }
+    </script>
+</body>
+</html>
